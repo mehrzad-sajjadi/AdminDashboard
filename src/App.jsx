@@ -1,14 +1,24 @@
 import { StrictMode } from 'react'
 import './App.css'
 import { useStateContext } from './context/ContextProvider'
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   const {activeMenu, themeSetting,setThemeSetting,currentColor,currentMode,isClicked} = useStateContext();
   
   return (
-    <StrictMode className>
-
-    </StrictMode>
+    <div className={currentMode==="Dark"?"dark":""}>
+      <BrowserRouter>
+        <div className='flex relative dark:bg-main-dark-bg'>
+          <div className="fixed left-4 buttom-4 z-[1000]">
+            <button type='button' className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white' 
+              style={{background:currentColor , borderRadius:"50%" }}
+              onClick={()=>{setThemeSetting(true)} }
+            ></button>
+          </div>
+        </div>
+      </BrowserRouter>
+    </div>
   )
 }
 
