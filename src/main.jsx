@@ -7,11 +7,15 @@ registerLicense(
 );
 import './index.css'
 import App from './App.jsx'
+import { ContextProvider } from './context/ContextProvider.jsx';
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode className="bg-black">
-    <App  />
+    <ContextProvider>
+      <App  />
+
+    </ContextProvider>
   </StrictMode>,
 )
