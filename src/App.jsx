@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import './App.css'
 import { useStateContext } from './context/ContextProvider'
 import { BrowserRouter } from 'react-router-dom';
+import { FiSettings } from "react-icons/fi";
 
 function App() {
   const {activeMenu, themeSetting,setThemeSetting,currentColor,currentMode,isClicked} = useStateContext();
@@ -14,7 +15,9 @@ function App() {
             <button type='button' className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white' 
               style={{background:currentColor , borderRadius:"50%" }}
               onClick={()=>{setThemeSetting(true)} }
-            ></button>
+            >
+              <FiSettings />
+            </button>
           </div>
         </div>
       </BrowserRouter>
